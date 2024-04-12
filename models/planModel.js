@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Schema } from "mongoose";
 
 const planSchema = new mongoose.Schema({
     name : {
@@ -15,9 +16,11 @@ const planSchema = new mongoose.Schema({
         min: 1,
         max: 31
     },
-    activities: [{
-        type: String
-    }]
+    activities: [
+        {
+            type: String
+        }
+    ]
 }, {timestamps: true})
 
 export default mongoose.model('plans', planSchema);
