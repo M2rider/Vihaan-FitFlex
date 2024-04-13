@@ -32,7 +32,8 @@ export const centerDetailsController = async (req, res) => {
     try {
         const { id } = req.params;
         console.log(id)
-        let reqCenter = await centerModel.find({ _id:id });
+        let reqCenter = await centerModel.find({ _id:id })
+            .populate('plans')
         console.log(reqCenter)
         res.status(200).send({
             success: true,
